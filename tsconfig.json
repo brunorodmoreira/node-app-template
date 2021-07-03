@@ -1,3 +1,6 @@
 {
-  "extends": "@brunormoreira/tsconfig"
+  "extends": "@brunormoreira/tsconfig",
+  "compilerOptions": {
+    "module": "CommonJS"
+  }
 }
