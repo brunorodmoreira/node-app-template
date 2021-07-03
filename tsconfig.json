@@ -1,1 +1,3 @@
-{ "extends": "@brunormoreira/tsconfig" }
+{
+  "extends": "@brunormoreira/tsconfig"
+}
