@@ -1,6 +1,9 @@
 import app from './app'
+import config from './config'
 
-app.listen(3000, () => {
+const PORT = config.port
+
+app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log('🚀 App is running!!')
 })
