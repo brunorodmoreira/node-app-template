@@ -14,7 +14,7 @@ const MOCKED_APP = {
 
 describe('loaders', () => {
   afterEach(() => {
-    ;(MOCKED_APP.use as jest.Mock).mockClear()
+    MOCKED_APP.use.mockClear()
   })
 
   describe('routesLoader', () => {
