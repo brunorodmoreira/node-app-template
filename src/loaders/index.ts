@@ -1,5 +1,12 @@
-import type Application from 'koa'
+import type { ILoader } from '../types/loader'
+import routesLoader from './routesLoader'
 
-const init = ({ app }: { app: Application }) => {}
+const loaders: ILoader[] = [routesLoader]
 
-export default init
+const init: ILoader = (options) => {
+  for (const loader of loaders) {
+    loader(options)
+  }
+}
+
+export default { init }

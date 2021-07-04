@@ -1,13 +1,9 @@
 import Koa from 'koa'
-import bodyParser from 'koa-bodyparser'
 
-import router from './routes'
+import loaders from './loaders'
 
 const app = new Koa()
 
-app.use(bodyParser())
-
-app.use(router.routes())
-app.use(router.allowedMethods())
+loaders.init({ app })
 
 export default app
