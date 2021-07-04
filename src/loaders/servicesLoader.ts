@@ -1,7 +1,6 @@
-import services from '../services'
 import type { ILoader } from '../types/loader'
 
-const servicesLoader: ILoader = ({ app }) => {
+const servicesLoader: ILoader = ({ app, services }) => {
   app.context.services = services
 }
 

@@ -1,4 +1,4 @@
-import type { ILoader, ILoaderArgs } from '../types/loader'
+import type { ILoader } from '../types/loader'
 import routesLoader from './routesLoader'
 import servicesLoader from './servicesLoader'
 import vendorsLoader from './vendorsLoader'
