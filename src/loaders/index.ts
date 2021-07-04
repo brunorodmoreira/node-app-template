@@ -1,10 +1,12 @@
-import type { ILoader } from '../types/loader'
+import type { ILoader, ILoaderArgs } from '../types/loader'
 import routesLoader from './routesLoader'
+import servicesLoader from './servicesLoader'
+import vendorsLoader from './vendorsLoader'
 
-const loaders: ILoader[] = [routesLoader]
+const LOADERS: ILoader[] = [vendorsLoader, routesLoader, servicesLoader]
 
 const init: ILoader = (options) => {
-  for (const loader of loaders) {
+  for (const loader of LOADERS) {
     loader(options)
   }
 }

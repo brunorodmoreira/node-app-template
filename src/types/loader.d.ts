@@ -1,3 +1,7 @@
 import type Application from 'koa'
 
-type ILoader = ({ app }: { app: Application }) => void
+type ILoaderArgs = {
+  app: Application
+}
+
+type ILoader = ({ app }: ILoaderArgs) => void
