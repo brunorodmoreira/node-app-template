@@ -1,6 +1,8 @@
+import loggerLoader from '../../src/loaders/loggerLoader'
 import routesLoader from '../../src/loaders/routesLoader'
 import servicesLoader from '../../src/loaders/servicesLoader'
 import vendorsLoader from '../../src/loaders/vendorsLoader'
+import loggerMiddleware from '../../src/middlewares/loggerMiddleware'
 
 jest.mock('koa-bodyparser', () => () => 'bodyParser')
 
@@ -16,11 +18,14 @@ const MOCKED_ROUTER = {
 
 const MOCKED_SERVICES = {} as any
 
+const MOCKED_LOGGER = {}
+
 const MOCKED_OPTIONS = {
   app: MOCKED_APP,
   router: MOCKED_ROUTER,
   services: MOCKED_SERVICES,
-}
+  logger: MOCKED_LOGGER,
+} as any
 
 describe('loaders', () => {
   afterEach(() => {
@@ -49,6 +54,15 @@ describe('loaders', () => {
       servicesLoader(MOCKED_OPTIONS)
 
       expect(MOCKED_APP.context.services).toBe(MOCKED_SERVICES)
+    })
+  })
+
+  describe('loggerLoader', () => {
+    it('should properly injects the logger in context and in App instance', () => {
+      loggerLoader(MOCKED_OPTIONS)
+
+      expect(MOCKED_APP.context.logger).toBe(MOCKED_LOGGER)
+      expect(MOCKED_APP.use).toHaveBeenCalledWith(loggerMiddleware)
     })
   })
 })
