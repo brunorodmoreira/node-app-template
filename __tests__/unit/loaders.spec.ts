@@ -20,7 +20,8 @@ const MOCKED_OPTIONS = {
   app: MOCKED_APP,
   router: MOCKED_ROUTER,
   services: MOCKED_SERVICES,
-}
+  logger: jest.fn(),
+} as any
 
 describe('loaders', () => {
   afterEach(() => {
