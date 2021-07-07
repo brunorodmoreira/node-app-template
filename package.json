@@ -1,6 +1,6 @@
 {
   "name": "node-app-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Template for my node apps",
   "main": "index.js",
   "repository": "git@github.com:brunorodmoreira/node-app-template.git",
